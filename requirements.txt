@@ -1,0 +1,7 @@
+numpy
+healpy
+scipy
+sys
+os
+ConfigParser
+astropy.io
