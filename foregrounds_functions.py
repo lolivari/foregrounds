@@ -177,7 +177,7 @@ def thermal_dust(frequencies, nside, model_template, spectral_index_model, temp_
     ### Models: template, spectral index, and temperature
     
     if model_template == 'gnilc_353':
-        td_0 = hp.read_map('data/COM_CompMap_Dust-GNILC-F353_2048_R2.00.fits')
+        td_0 = hp.read_map('data/COM_CompMap_Dust-GNILC-F353_2048_R2.00_small_scales.fits')
         td_0 = 261.20305067644796 * td_0 # from 'MJy/sr' to 'muK_RJ'
         freq_in = 353.0  # GHz
     else:
