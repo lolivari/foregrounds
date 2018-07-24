@@ -159,7 +159,7 @@ def ame(frequencies, nside, model_template, ame_ratio, ame_freq_in):
 
     for i in range (0, nchannels):
         flux_out = intp(frequencies[i])
-        scale = flux_out / flux_in
+        scale = flux_out / flux_in * (ame_freq_in / frequencies[i])**2
         maps[i, :] = 1.e-3 * tau * ame_ratio * scale
 
     return maps # mK
@@ -545,6 +545,6 @@ def cmb(frequencies, nside, cmb_model):
     cmb_mean = 2.73 # K
 
     for i in range(0, nchannels):       
-        maps[i, :] = ((gamma * (frequencies[i] * 1.e9) / cmb_mean) / (np.exp(gamma * (frequencies[i] * 1.e9) / cmb_mean) - 1.)) * (map_cmb_ther[:]) # relationship between brightness temperature and thermodynamic temperature
+        maps[i, :] = ((gamma * (frequencies[i] * 1.e9) / cmb_mean)**2 * np.exp(gamma * (frequencies[i] * 1.e9) / cmb_mean) / (np.exp(gamma * (frequencies[i] * 1.e9) / cmb_mean) - 1.)**2) * (map_cmb_ther[:]) # relationship between brightness temperature and thermodynamic temperature
         
     return 1.e3 * maps # mK
