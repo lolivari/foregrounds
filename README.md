@@ -22,7 +22,7 @@
 
 # Output of the code
 
-1) The code will output at least one 'fits' file with the total foreground cube (frequency vs Healpix pixels) in the directory output. You might choose extra outputs in the parameters file.
+1) The code will output at least one 'fits' file with the total foreground cube (frequency vs Healpix pixels) in the directory output. You might choose extra outputs in the parameters file. The unit of the maps is 'mK'.
 
 # Extra info
 
